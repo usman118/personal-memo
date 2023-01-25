@@ -131,6 +131,8 @@ const DisplayBoxes = (props) => {
   let MemoValue = props.memoValue;
   let setDisplayData = props.setDisplayData;
   // console.log(mydata, "mydata");
+  // create sharable link
+
   return (
     <div className="flex flex-col sm:justify-center items-center w-screen ">
       <div
@@ -143,10 +145,10 @@ const DisplayBoxes = (props) => {
         {mydata.map((item, index) => {
           return (
             <div
-              className="flex flex-col w-screen sm:w-80 sm:h-64  bg-blue-200 rounded-xl"
+              className="flex flex-col w-screen sm:w-80 sm:h-64  bg-blue-200  sm:rounded-xl"
               key={item.id}
             >
-              <div className="flex flex-row justify-between bg-blue-600  rounded-t-xl">
+              <div className="flex flex-row justify-between bg-blue-600  sm:rounded-t-xl">
                 <h1 className="text-xl text-white text-start p-1 ">
                   {item.id}
                 </h1>
@@ -199,9 +201,14 @@ const DisplayBoxes = (props) => {
                     Delete
                   </button>
                 )}
-                <button className="bg-blue-600 text-white w-1/4 h-10 rounded-md shadow-md  ">
+                {/* <button
+                  className="bg-blue-600 text-white w-1/4 h-10 rounded-md shadow-md  "
+                  onClick={() => {
+                    createLink(item.id);
+                  }}
+                >
                   Share
-                </button>
+                </button> */}
               </div>
             </div>
           );
