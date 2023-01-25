@@ -1,9 +1,13 @@
 // Next.js API route support: https://nextjs.org/docs/api-routes/introduction
 
 import { MongoClient } from "mongodb";
-import { url_mongo } from "../../variables";
+// import { url_mongo } from "../../variables";
 
 export default async function handler(req, res) {
+  // get variable from .env.local file
+  const url_mongo = process.env.NEXT_PUBLIC_MONGODB_URI;
+  console.log(url_mongo);
+
   const { username, privateKey } = req.body;
   const client = await MongoClient.connect(url_mongo);
   const db = client.db();
