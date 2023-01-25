@@ -465,8 +465,13 @@ const CreateNew = (props) => {
           <button
             className="bg-blue-600 text-white w-1/4 h-10 rounded-md shadow-md  "
             onClick={() => {
-              onClickSave();
-              setShowForm(false);
+              if (title === "" || descriptions === "") {
+                alert("Please fill all the fields");
+                return;
+              } else {
+                onClickSave();
+                setShowForm(false);
+              }
             }}
           >
             Save

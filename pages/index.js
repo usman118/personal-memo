@@ -35,10 +35,12 @@ export default function Auth() {
         // reload page
         window.location.reload();
 
-        return false;
+        return;
       }
       setLoading(false);
     };
+    // check length of private key and username
+
     SendRequest();
     setLogin(true);
   };
@@ -102,8 +104,14 @@ export default function Auth() {
                 <button
                   type="submit"
                   className="bg-blue-600 text-white w-96 h-10"
+                  // disabled={username.length < 3 || privateKey.length < 3}
                   onClick={() => {
-                    onSubmit();
+                    if (username.length < 4 || privateKey.length < 4) {
+                      alert("Username or PrivateKey is too short min 4 chars");
+                      return;
+                    } else {
+                      onSubmit();
+                    }
                   }}
                 >
                   Login
