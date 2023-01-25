@@ -56,13 +56,14 @@ export default async function handler(req, res) {
     } else {
       res.status(404).json({ message: "Wrong key" });
     }
-    return;
-  }
-  const filterData = {
-    name: data.name,
-    key: data.key,
-    data: data.data,
-  };
+    // return;
+  } else {
+    const filterData = {
+      name: data.name,
+      key: data.key,
+      data: data.data,
+    };
 
-  res.status(200).json(filterData);
+    res.status(200).json(filterData);
+  }
 }
