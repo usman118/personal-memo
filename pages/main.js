@@ -1,9 +1,9 @@
 /* eslint-disable react-hooks/rules-of-hooks */
 import { useState } from "react";
 export default function Home(props) {
-  let user = props.user;
-  let userKey = props.userKey;
-  let filterData = props.data;
+  let user = props.user || "";
+  let userKey = props.userKey || "";
+  let filterData = props.data || [];
   if (!Array.isArray(filterData.data)) {
     filterData.data = [filterData.data];
   }
