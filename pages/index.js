@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import Home from "./main";
+import Home from "../components/main";
 
 export default function Auth() {
   const [username, setUsername] = useState("");
