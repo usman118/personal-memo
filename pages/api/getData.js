@@ -21,7 +21,7 @@ export default async function handler(req, res) {
     const data = await dataCollection.findOne({
       name: username,
     });
-    client.close();
+    // client.close();
     console.log(data);
     if (!data) {
       const data2 = await dataCollection.insertOne({
